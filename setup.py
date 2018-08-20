@@ -27,7 +27,7 @@ setup(
     author='attevaltonen',
     author_email='atte.hj.valtonen@gmail.com',
     url='https://github.com/attevaltonen/drf-crud-proxy',
-    packages=find_packages(),
+    packages=['drf_crud_proxy'],
     include_package_data=True,
     install_requires=[
         'Django>=2.0,<2.2',
