@@ -1,0 +1,21 @@
+# packages
+*.egg
+*.egg-info
+
+# Python / Django
+*.log
+*.pot
+*.pyc
+
+# Unit tests
+.tox
+
+# Coverage
+.coverage
+htmlcov/
+
+# PyPi
+dist/
+
+# IDEs
+.idea/
