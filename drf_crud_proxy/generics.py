@@ -1,36 +1,41 @@
 from rest_framework import generics
 
-from drf_crud_proxy.mixins import CreateModelMixin, UpdateModelMixin, ListModelMixin, RetrieveModelMixin
+from drf_crud_proxy.mixins import ProxiedCreateModelMixin, ProxiedUpdateModelMixin, ProxiedListModelMixin, \
+    ProxiedRetrieveModelMixin
 from drf_crud_proxy.proxy import CRUDProxy
 
 
-class CreateAPIView(CRUDProxy, CreateModelMixin, generics.CreateAPIView):
+class ProxiedCreateAPIView(CRUDProxy, ProxiedCreateModelMixin, generics.CreateAPIView):
     pass
 
 
-class UpdateAPIView(CRUDProxy, UpdateModelMixin, generics.UpdateAPIView):
+class ProxiedUpdateAPIView(CRUDProxy, ProxiedUpdateModelMixin, generics.UpdateAPIView):
     pass
 
 
-class ListAPIView(CRUDProxy, ListModelMixin, generics.ListAPIView):
+class ProxiedListAPIView(CRUDProxy, ProxiedListModelMixin, generics.ListAPIView):
     pass
 
 
-class RetrieveAPIView(CRUDProxy, RetrieveModelMixin, generics.RetrieveAPIView):
+class ProxiedRetrieveAPIView(CRUDProxy, ProxiedRetrieveModelMixin, generics.RetrieveAPIView):
     pass
 
 
-class ListCreateAPIView(CRUDProxy, CreateModelMixin, ListModelMixin, generics.ListCreateAPIView):
+class ProxiedListCreateAPIView(CRUDProxy, ProxiedCreateModelMixin, ProxiedListModelMixin, generics.ListCreateAPIView):
     pass
 
 
-class RetrieveDestroyAPIView(CRUDProxy, RetrieveModelMixin, generics.RetrieveDestroyAPIView):
+class ProxiedRetrieveDestroyAPIView(CRUDProxy, ProxiedRetrieveModelMixin, generics.RetrieveDestroyAPIView):
     pass
 
 
-class RetrieveUpdateAPIView(CRUDProxy, UpdateModelMixin, RetrieveModelMixin, generics.RetrieveUpdateAPIView):
+class ProxiedRetrieveUpdateAPIView(
+    CRUDProxy, ProxiedUpdateModelMixin, ProxiedRetrieveModelMixin, generics.RetrieveUpdateAPIView
+):
     pass
 
 
-class RetrieveUpdateDestroyAPIView(CRUDProxy, UpdateModelMixin, RetrieveModelMixin, generics.RetrieveUpdateDestroyAPIView):
+class ProxiedRetrieveUpdateDestroyAPIView(
+    CRUDProxy, ProxiedUpdateModelMixin, ProxiedRetrieveModelMixin, generics.RetrieveUpdateDestroyAPIView
+):
     pass

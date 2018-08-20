@@ -4,7 +4,7 @@ from rest_framework.request import clone_request
 from rest_framework.response import Response
 
 
-class UpdateModelMixin(mixins.UpdateModelMixin):
+class ProxiedUpdateModelMixin(mixins.UpdateModelMixin):
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
         instance = self.get_object_or_none()
@@ -53,7 +53,7 @@ class UpdateModelMixin(mixins.UpdateModelMixin):
                 raise
 
 
-class CreateModelMixin(mixins.CreateModelMixin):
+class ProxiedCreateModelMixin(mixins.CreateModelMixin):
     def create(self, request, *args, **kwargs):
         data = self.get_request_data(request)
         request_serializer = self.get_request_serializer(data=data)
@@ -67,7 +67,7 @@ class CreateModelMixin(mixins.CreateModelMixin):
         return Response(response_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
-class ListModelMixin(mixins.ListModelMixin):
+class ProxiedListModelMixin(mixins.ListModelMixin):
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
 
@@ -80,7 +80,7 @@ class ListModelMixin(mixins.ListModelMixin):
         return Response(response_serializer.data)
 
 
-class RetrieveModelMixin(mixins.RetrieveModelMixin):
+class ProxiedRetrieveModelMixin(mixins.RetrieveModelMixin):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         response_serializer = self.get_response_serializer(instance)

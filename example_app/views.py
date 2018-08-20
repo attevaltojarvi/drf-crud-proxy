@@ -12,47 +12,47 @@ class OrderBaseEndpoint(object):
     response_serializer_class = OrderListSerializer
 
 
-class OrderListCreateEndpoint(OrderBaseEndpoint, generics.ListCreateAPIView):
+class OrderListCreateEndpoint(OrderBaseEndpoint, generics.ProxiedListCreateAPIView):
     pass
 
 
-class OrderListWithoutReadSerializerEndpoint(generics.ListAPIView):
+class OrderListWithoutReadSerializerEndpoint(generics.ProxiedListAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderListSerializer
 
 
-class OrderRetrieveUpdateDestroyEndpoint(OrderBaseEndpoint, generics.RetrieveUpdateDestroyAPIView):
+class OrderRetrieveUpdateDestroyEndpoint(OrderBaseEndpoint, generics.ProxiedRetrieveUpdateDestroyAPIView):
     pass
 
 
-class OrderRetrieveUpdateEndpoint(OrderBaseEndpoint, generics.RetrieveUpdateAPIView):
+class OrderRetrieveUpdateEndpoint(OrderBaseEndpoint, generics.ProxiedRetrieveUpdateAPIView):
     pass
 
 
-class OrderCreateWithGenericEndpoint(OrderBaseEndpoint, generics.CreateAPIView):
+class OrderCreateWithGenericEndpoint(OrderBaseEndpoint, generics.ProxiedCreateAPIView):
     pass
 
 
-class OrderUpdateWithGenericEndpoint(OrderBaseEndpoint, generics.UpdateAPIView):
+class OrderUpdateWithGenericEndpoint(OrderBaseEndpoint, generics.ProxiedUpdateAPIView):
     pass
 
 
-class OrderListWithGenericEndpoint(OrderBaseEndpoint, generics.ListAPIView):
+class OrderListWithGenericEndpoint(OrderBaseEndpoint, generics.ProxiedListAPIView):
     pass
 
 
-class OrderRetrieveWithGenericEndpoint(OrderBaseEndpoint, generics.RetrieveAPIView):
+class OrderRetrieveWithGenericEndpoint(OrderBaseEndpoint, generics.ProxiedRetrieveAPIView):
     pass
 
 
-class OrderCreateWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.CreateModelMixin):
+class OrderCreateWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.ProxiedCreateModelMixin):
     pass
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
 
 
-class OrderUpdateWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.UpdateModelMixin):
+class OrderUpdateWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.ProxiedUpdateModelMixin):
     pass
 
     def put(self, request, *args, **kwargs):
@@ -62,19 +62,19 @@ class OrderUpdateWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView,
         return self.partial_update(request, *args, **kwargs)
 
 
-class OrderListWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.ListModelMixin):
+class OrderListWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.ProxiedListModelMixin):
     pass
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
 
-class OrderRetrieveWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.RetrieveModelMixin):
+class OrderRetrieveWithMixinEndpoint(CRUDProxy, OrderBaseEndpoint, GenericAPIView, mixins.ProxiedRetrieveModelMixin):
     pass
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
 
 
-class OrderViewset(OrderBaseEndpoint, viewsets.ModelViewSet):
+class OrderViewset(OrderBaseEndpoint, viewsets.ProxiedModelViewSet):
     pass

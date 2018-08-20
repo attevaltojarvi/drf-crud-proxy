@@ -1,16 +1,22 @@
 from rest_framework import viewsets
 
-from drf_crud_proxy.mixins import CreateModelMixin, UpdateModelMixin, ListModelMixin, RetrieveModelMixin
+from drf_crud_proxy.mixins import ProxiedCreateModelMixin, ProxiedUpdateModelMixin, ProxiedListModelMixin, \
+    ProxiedRetrieveModelMixin
 from drf_crud_proxy.proxy import CRUDProxy
 
 
-class GenericViewSet(CRUDProxy, viewsets.GenericViewSet):
+class ProxiedGenericViewSet(CRUDProxy, viewsets.GenericViewSet):
     pass
 
 
-class ModelViewSet(CRUDProxy, CreateModelMixin, UpdateModelMixin, ListModelMixin, RetrieveModelMixin, viewsets.ModelViewSet):
+class ProxiedModelViewSet(
+    CRUDProxy, ProxiedCreateModelMixin, ProxiedUpdateModelMixin, ProxiedListModelMixin, ProxiedRetrieveModelMixin,
+    viewsets.ModelViewSet
+):
     pass
 
 
-class ReadOnlyModelViewSet(CRUDProxy, ListModelMixin, RetrieveModelMixin, viewsets.ReadOnlyModelViewSet):
+class ProxiedReadOnlyModelViewSet(
+    CRUDProxy, ProxiedListModelMixin, ProxiedRetrieveModelMixin, viewsets.ReadOnlyModelViewSet
+):
     pass
