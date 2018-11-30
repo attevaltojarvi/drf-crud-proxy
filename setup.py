@@ -2,7 +2,7 @@ import os
 import pathlib
 import re
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 def get_version(*file_paths):
