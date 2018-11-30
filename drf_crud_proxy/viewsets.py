@@ -10,7 +10,7 @@ class ProxiedGenericViewSet(CRUDProxy, viewsets.GenericViewSet):
 
 
 class ProxiedModelViewSet(
-    CRUDProxy, ProxiedCreateModelMixin, ProxiedUpdateModelMixin, ProxiedListModelMixin, ProxiedRetrieveModelMixin,
+    CRUDProxy, ProxiedListModelMixin, ProxiedRetrieveModelMixin, ProxiedUpdateModelMixin, ProxiedCreateModelMixin,
     viewsets.ModelViewSet
 ):
     pass
