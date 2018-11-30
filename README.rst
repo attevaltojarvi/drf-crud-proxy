@@ -51,9 +51,13 @@ the user has to have model permissions for the corresponding create behavior (``
 
 **NOTE**: The ``PUT-as-create`` functionality doesn't have tests (yet).
 
-## License
+License
+-------
 
 MIT
+
+Inspiration
+-----------
 
 This functionality in DRF is something I've needed in numerous Django projects, so hopefully this will help someone else
 too :)
