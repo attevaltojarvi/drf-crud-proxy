@@ -1,4 +1,5 @@
 import os
+import pathlib
 import re
 
 from setuptools import setup, find_packages
@@ -20,10 +21,16 @@ def get_version(*file_paths):
 VERSION = get_version('drf_crud_proxy', '__init__.py')
 
 
+HERE = pathlib.Path(__file__).parent
+README = (HERE / 'README.md').read_text()
+
+
 setup(
     name='drf-crud-proxy',
     version=VERSION,
     description="""Generic views, viewsets and mixins that extend the ones provided by Django REST Framework, adding separated serializers for read and write operations.""",
+    long_description=README,
+    long_description_content_type='text/markdown',
     author='attevaltonen',
     author_email='atte.hj.valtonen@gmail.com',
     url='https://github.com/attevaltonen/drf-crud-proxy',
