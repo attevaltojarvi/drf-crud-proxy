@@ -8,8 +8,9 @@ but present the related object alongside the response instead of only the databa
 
 ## Requirements
 
-- Python 3.7 (though will surely work with any 3.x version)
+- Python 3.6 or 3.7 (probably older versions as well)
 - Django 2.0 or 2.1
+- Django REST Framework 3.x
 
 ## Installation
 
@@ -30,7 +31,7 @@ from app.models import MyModel
 from api.serializers import MyModelCreateSerializer, MyModelSerializer
 
 
-class MyModelListCreateView(generics.ListCreateAPIView):
+class MyModelListCreateView(generics.ProxiedListCreateAPIView):
     queryset = MyModel.objects.all()
     request_serializer_class = MyModelCreateSerializer
     response_serializer_class = MyModelSerializer
@@ -43,6 +44,8 @@ methods in the view.
 
 The package also supports the so-called `PUT-as-create` behavior that was removed from DRF in its 3.0 release. Note that
 the user has to have model permissions for the corresponding create behavior (`POST` request).
+
+**NOTE**: The `PUT-as-create` functionality doesn't have tests (yet).
 
 ## License
 
