@@ -15,43 +15,45 @@ def get_version(*file_paths):
                               version_file, re.M)
     if version_match:
         return version_match.group(1)
-    raise RuntimeError('Unable to find version string.')
+    raise RuntimeError("Unable to find version string.")
 
 
-VERSION = get_version('drf_crud_proxy', '__init__.py')
+VERSION = get_version("drf_crud_proxy", "__init__.py")
 
 
 HERE = pathlib.Path(__file__).parent
-README = (HERE / 'README.md').read_text()
+README = (HERE / "README.md").read_text()
 
 
 setup(
-    name='drf-crud-proxy',
+    name="drf-crud-proxy",
     version=VERSION,
-    description="""Generic views, viewsets and mixins that extend the ones provided by Django REST Framework, adding separated serializers for read and write operations.""",
+    description="Separate serializers for parsing requests and returning responses in DRF",
     long_description=README,
-    long_description_content_type='text/markdown',
-    author='attevaltonen',
-    author_email='atte.hj.valtonen@gmail.com',
-    url='https://github.com/attevaltonen/drf-crud-proxy',
-    packages=['drf_crud_proxy'],
+    long_description_content_type="text/markdown",
+    author="attevaltonen",
+    author_email="atte.hj.valtonen@gmail.com",
+    url="https://github.com/attevaltonen/drf-crud-proxy",
+    packages=["drf_crud_proxy"],
     include_package_data=True,
     install_requires=[
-        'Django>=2.0,<2.2',
-        'djangorestframework>=3.8'
+        "Django>=2.0,<2.2",
+        "djangorestframework>=3.8"
     ],
-    license='MIT',
+    license="MIT",
     zip_safe=False,
-    keywords='Django REST Framework, Serializers, REST, API, Django',
-    test_suite='tox',
+    keywords="Django REST Framework, Serializers, REST, API, Django",
+    test_suite="tox",
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Framework :: Django',
-        'Framework :: Django :: 2.0',
-        'Framework :: Django :: 2.1',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Natural Language :: Finnish',
-        'Programming Language :: Python :: 3.7',
+        "Development Status :: 3 - Alpha",
+        "Framework :: Django",
+        "Framework :: Django :: 2.0",
+        "Framework :: Django :: 2.1",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: Finnish",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
     ],
 )
