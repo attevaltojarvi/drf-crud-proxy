@@ -1,8 +1,7 @@
 import os
-import pathlib
 import re
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def get_version(*file_paths):
@@ -18,11 +17,13 @@ def get_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
+def readme():
+    with open('README.rst') as f:
+        return f.read()
+
+
 VERSION = get_version("drf_crud_proxy", "__init__.py")
-
-
-HERE = pathlib.Path(__file__).parent
-README = (HERE / "README.md").read_text()
+README = readme()
 
 
 setup(
@@ -30,11 +31,11 @@ setup(
     version=VERSION,
     description="Separate serializers for parsing requests and returning responses in DRF",
     long_description=README,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/x-rst",
     author="attevaltonen",
     author_email="atte.hj.valtonen@gmail.com",
     url="https://github.com/attevaltonen/drf-crud-proxy",
-    packages=["drf_crud_proxy"],
+    packages=find_packages(exclude=("example_app", "test_utils", "tests")),
     include_package_data=True,
     install_requires=[
         "Django>=2.0,<2.2",

@@ -15,6 +15,7 @@
 htmlcov/
 
 # PyPi
+build/
 dist/
 
 # IDEs
