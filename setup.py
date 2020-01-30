@@ -51,10 +51,6 @@ setup(
         "Framework :: Django :: 2.1",
         "Framework :: Django :: 2.2",
         "Framework :: Django :: 3.0",
-        "Framework :: Django REST Framework :: 3.8"
-        "Framework :: Django REST Framework :: 3.9"
-        "Framework :: Django REST Framework :: 3.10"
-        "Framework :: Django REST Framework :: 3.11"
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: Finnish",
