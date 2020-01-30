@@ -38,7 +38,7 @@ setup(
     packages=find_packages(exclude=("example_app", "test_utils", "tests")),
     include_package_data=True,
     install_requires=[
-        "Django>=2.0,<2.2",
+        "Django>=2.0,<3.1",
         "djangorestframework>=3.8"
     ],
     license="MIT",
@@ -48,13 +48,19 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Framework :: Django",
-        "Framework :: Django :: 2.0",
         "Framework :: Django :: 2.1",
+        "Framework :: Django :: 2.2",
+        "Framework :: Django :: 3.0",
+        "Framework :: Django REST Framework :: 3.8"
+        "Framework :: Django REST Framework :: 3.9"
+        "Framework :: Django REST Framework :: 3.10"
+        "Framework :: Django REST Framework :: 3.11"
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: Finnish",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8"
     ],
 )

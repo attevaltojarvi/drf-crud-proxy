@@ -10,9 +10,9 @@ but present the related object alongside the response instead of only the databa
 Requirements
 ------------
 
-- Python 3.6 or 3.7 (probably older versions as well)
-- Django 2.0 or 2.1
-- Django REST Framework 3.x
+- Python 3.6, 3.7, 3.8 (probably older versions as well)
+- Django 2.1, 2.2 or 3.0
+- Django REST Framework 3.8 or newer, but probably works on any 3.x version
 
 Installation
 ------------
