@@ -67,17 +67,11 @@ class CRUDProxy(object):
         """
         return request.data
 
-    def get_response_data(self, data):
+    def get_response_data(self, serializer):
         """
         Return the data to bed fed to the response serializer. Override to provide custom data.
         """
-        pk = data.get('id') or self.kwargs.get(self.lookup_field)
-        # Re-evaluate queryset
-        qs = self.get_queryset()
-        try:
-            return qs.get(pk=pk)
-        except qs.model.DoesNotExist:
-            return data
+        return serializer.instance
 
     def get_object(self):
         queryset = self.filter_queryset(self.get_queryset())

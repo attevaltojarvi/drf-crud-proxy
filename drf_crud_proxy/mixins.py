@@ -33,7 +33,7 @@ class ProxiedCreateModelMixin(mixins.CreateModelMixin):
         self.perform_create(request_serializer)
         headers = self.get_success_headers(request_serializer.data)
 
-        response_data = self.get_response_data(request_serializer.data)
+        response_data = self.get_response_data(request_serializer)
         response_serializer = self.get_response_serializer(response_data)
         return Response(response_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
@@ -57,7 +57,7 @@ class ProxiedUpdateModelMixin(ProxiedCreateModelMixin, mixins.UpdateModelMixin):
             # forcibly invalidate the prefetch cache on the instance.
             instance._prefetched_objects_cache = {}
 
-        response_data = self.get_response_data(request_serializer.data)
+        response_data = self.get_response_data(request_serializer)
         response_serializer = self.get_response_serializer(response_data)
         return Response(response_serializer.data)
 

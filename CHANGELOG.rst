@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.2.0
+-----
+
+- BACKWARDS INCOMPATIBLE: Changed ``get_response_data`` method to accept whole serializer class instance instead of its ``data`` attribute
+
 0.1.2
 -----
 
