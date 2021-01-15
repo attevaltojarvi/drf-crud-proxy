@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.3.0
+-----
+
+- Added mention of Python 3.9/Django 3.1 support
+
 0.2.0
 -----
 
