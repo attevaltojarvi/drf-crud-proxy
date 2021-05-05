@@ -23,3 +23,5 @@ INSTALLED_APPS = (
 ROOT_URLCONF = 'example_app.urls'
 
 SECRET_KEY = 'redundant'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
