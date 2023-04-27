@@ -32,13 +32,13 @@ setup(
     description="Separate serializers for parsing requests and returning responses in DRF",
     long_description=README,
     long_description_content_type="text/x-rst",
-    author="attevaltonen",
-    author_email="atte.hj.valtonen@gmail.com",
-    url="https://github.com/attevaltonen/drf-crud-proxy",
+    author="attevaltojarvi",
+    author_email="atte.valtojarvi@gmail.com",
+    url="https://github.com/attevaltojarvi/drf-crud-proxy",
     packages=find_packages(exclude=("example_app", "test_utils", "tests")),
     include_package_data=True,
     install_requires=[
-        "Django>=2.2,<3.3",
+        "Django>=3.2,<5.0",
         "djangorestframework>=3.8"
     ],
     license="MIT",
@@ -48,10 +48,10 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Framework :: Django",
-        "Framework :: Django :: 2.2",
-        "Framework :: Django :: 3.0",
-        "Framework :: Django :: 3.1",
         "Framework :: Django :: 3.2",
+        "Framework :: Django :: 4.0",
+        "Framework :: Django :: 4.1"
+        "Framework :: Django :: 4.2"
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: Finnish",
@@ -59,6 +59,8 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9"
-    ],
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11"
+    ]
 )
