@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.5.0
+-----
+
+- Updated tox version matrix
+
 0.4.0
 -----
 

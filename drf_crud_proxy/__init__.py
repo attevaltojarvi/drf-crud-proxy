@@ -3,6 +3,6 @@ Generic views, viewsets and mixins that extend the ones provided by Django REST 
 adding separated serializers for read and write operations.
 """
 
-__version__ = '0.4.0'
+__version__ = '0.5.0'
 
 default_app_config = 'drf_crud_proxy.apps.DrfCrudProxyConfig'
